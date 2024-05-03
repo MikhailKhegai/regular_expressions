@@ -25,8 +25,8 @@ with open('C:\\Users\\Mario\\Downloads\\phonebook_raw.csv', encoding="utf-8") as
 
 
   for sentence in new_contact_list:
-    pattern = r'(\+7|8)\s*\(*(\d{1,3})\)*\-*\s*(\d{1,3})\-*(\d{1,2})\-*(\d+)(\s*)\(*((\w+\.)\s(\w+)\)*)*'
-    sentence[5] = re.sub(pattern, r'+7\(\2\)\3\-\4\-\5\6\8\9', sentence[5])
+    pattern = r'(\+7|8)\s*(\(|)(\d{1,3})[\s\)-]*(\d{1,3})\-*(\d{1,2})\-*(\d{2})(\s*)\(*((\w+\.)\s(\w+)\)*)*'
+    sentence[5] = re.sub(pattern, r'+7(\3)-\4-\5-\6\7\9\10', sentence[5])
 
 dictionary = {}
 for d in new_contact_list:
